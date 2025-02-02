@@ -5,9 +5,7 @@ const nextConfig = {
     unoptimized: true,
     domains: ['v0.blob.com'],
   },
-  // Remove basePath if this is your username.github.io repository
-  // Keep it if this is a project repository
-  // basePath: '/repository-name',
+  assetPrefix: './',
 }
 
 module.exports = nextConfig
