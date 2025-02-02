@@ -1,11 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',  // Enable static exports
+  output: 'export',
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true,
     domains: ['v0.blob.com'],
   },
-  basePath: '/aura-network-portfolio', // Replace with your repo name
+  // Remove basePath if this is your username.github.io repository
+  // Keep it if this is a project repository
+  // basePath: '/repository-name',
 }
 
 module.exports = nextConfig
