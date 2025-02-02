@@ -41,8 +41,8 @@ export default function NewsPage() {
           <h2 className="text-xl font-semibold mb-2">Key Features:</h2>
           <ul className="list-disc list-inside mb-4">
             <li>
-              User Verification: Members can check their status and ensure they're not associated with known leaking
-              communities.
+              User Verification: Members can check their status and ensure they&apos;re not associated with known
+              leaking communities.
             </li>
             <li>Server Checking: Ability to verify the legitimacy of FiveM-related Discord servers.</li>
             <li>Comprehensive Database: Maintains a list of servers involved in reselling or leaking activities.</li>
