@@ -5,7 +5,9 @@ const nextConfig = {
     unoptimized: true,
     domains: ['v0.blob.com'],
   },
-  assetPrefix: './',
+  assetPrefix: '',
+  basePath: '',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
