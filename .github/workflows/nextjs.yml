@@ -31,10 +31,15 @@ jobs:
         run: npm ci
       - name: Build with Next.js
         run: npm run build
-      - name: Copy additional files
+      - name: Fix paths
         run: |
-          cp -r public/* out/
-          cp -r src/styles out/styles
+          if [ -d "public" ]; then
+            cp -r public/* out/ || true
+          fi
+          if [ -d "src/styles" ]; then
+            mkdir -p out/styles
+            cp -r src/styles/* out/styles/ || true
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
