@@ -35,7 +35,6 @@ jobs:
       - name: Create .nojekyll file
         run: |
           touch out/.nojekyll
-          cp out/404/index.html out/404.html
           cp out/index.html out/404.html
 
       - name: Upload artifact
@@ -53,3 +52,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
