@@ -4,7 +4,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Remove assetPrefix and basePath
   trailingSlash: true,
 }
 
