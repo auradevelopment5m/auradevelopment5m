@@ -1,4 +1,4 @@
-import { AlertCircle, CheckCircle2, XCircle } from 'lucide-react'
+import { AlertCircle, CheckCircle2, XCircle } from "lucide-react"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -8,7 +8,6 @@ export default function RulesPage() {
     <main className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8">Community Guidelines & Support Rules</h1>
 
-      {/* Support Entitlement Notice */}
       <Alert className="mb-8 border-yellow-600 bg-yellow-600/10">
         <AlertCircle className="h-4 w-4" />
         <AlertTitle>Important Notice</AlertTitle>
@@ -18,7 +17,6 @@ export default function RulesPage() {
         </AlertDescription>
       </Alert>
 
-      {/* Support Tiers */}
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
         <Card>
           <CardHeader>
@@ -77,7 +75,6 @@ export default function RulesPage() {
         </Card>
       </div>
 
-      {/* Discord Rules */}
       <section className="mb-12">
         <h2 className="text-3xl font-bold mb-6">Discord Rules</h2>
         <Card>
@@ -136,7 +133,6 @@ export default function RulesPage() {
         </Card>
       </section>
 
-      {/* Support Policies */}
       <section className="mb-12">
         <h2 className="text-3xl font-bold mb-6">Support Policies</h2>
         <div className="grid gap-6 md:grid-cols-2">
@@ -158,7 +154,7 @@ export default function RulesPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle>What We Don't Support</CardTitle>
+              <CardTitle>What We Don&apos;t Support</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="list-disc pl-4 space-y-2">
@@ -174,7 +170,6 @@ export default function RulesPage() {
         </div>
       </section>
 
-      {/* Additional Information */}
       <section>
         <h2 className="text-3xl font-bold mb-6">Additional Information</h2>
         <Card>
@@ -203,7 +198,7 @@ export default function RulesPage() {
                     <li>Premium Support: 4 hours (business hours)</li>
                     <li>Paid Resources: 24-48 hours</li>
                     <li>Free Resources: Best effort basis</li>
-                    <li>Business Hours: Monday-Friday, 9 AM - 9 PM GMT +3:00</li>
+                    <li>Business Hours: Monday-Friday, 9 AM - 5 PM UTC</li>
                   </ul>
                 </AccordionContent>
               </AccordionItem>
@@ -213,8 +208,8 @@ export default function RulesPage() {
                 <AccordionContent>
                   <ul className="list-disc pl-4 space-y-2">
                     <li>Discord: Join our server for the fastest support</li>
-                    <li>Email: info@auracity.store</li>
-                    <li>Tebex: Through our store's support system</li>
+                    <li>Email: support@auradevelopment.com</li>
+                    <li>Tebex: Through our store&apos;s support system</li>
                     <li>GitHub: For bug reports and feature requests</li>
                   </ul>
                 </AccordionContent>
@@ -226,3 +221,4 @@ export default function RulesPage() {
     </main>
   )
 }
+
