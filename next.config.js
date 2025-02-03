@@ -4,7 +4,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  trailingSlash: true,
+  // Remove trailing slash as it can cause issues
+  trailingSlash: false,
+  // Remove basePath and assetPrefix - let's handle paths directly
 }
 
 module.exports = nextConfig

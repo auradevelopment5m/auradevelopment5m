@@ -20,17 +20,36 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: npm
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        
       - name: Install dependencies
         run: npm ci
+        
       - name: Build with Next.js
         run: npm run build
+        
+      # New: Create .nojekyll file to prevent GitHub Pages from ignoring files that begin with an underscore
+      - name: Create .nojekyll file
+        run: touch ./out/.nojekyll
+        
+      # New: Fix asset paths in HTML and other files
+      - name: Fix asset paths
+        run: |
+          cd out
+          find . -type f -name "*.html" -exec sed -i 's/"\/manifest.json/"\.\/manifest.json/g' {} +
+          find . -type f -name "*.html" -exec sed -i 's/"\/favicon.ico/"\.\/favicon.ico/g' {} +
+          find . -type f -name "*.html" -exec sed -i 's/"_next\//"\.\/_next\//g' {} +
+          find . -type f -name "*.js" -exec sed -i 's/"_next\//"\.\/_next\//g' {} +
+          find . -type f -name "*.css" -exec sed -i 's/"_next\//"\.\/_next\//g' {} +
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
