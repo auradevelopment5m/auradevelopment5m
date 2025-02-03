@@ -1,4 +1,4 @@
-import "@/app/globals.css" // Update the import path
+import "@/app/styles/globals.css" // Update the import path
 import { Inter } from "next/font/google"
 import Header from "./components/header"
 import type React from "react"
