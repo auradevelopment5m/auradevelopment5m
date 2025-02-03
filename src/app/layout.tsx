@@ -6,9 +6,6 @@ import type React from "react"
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  adjustFontFallback: true,
-  preload: true,
-  fallback: ["system-ui", "arial"],
 })
 
 export default function RootLayout({

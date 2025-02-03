@@ -31,18 +31,8 @@ jobs:
         run: npm ci
       - name: Build with Next.js
         run: npm run build
-      - name: Prepare static files
-        run: |
-          mkdir -p out/styles
-          cp src/styles/globals.css out/styles/
-          if [ -d "public" ]; then
-            cp -r public/* out/ || true
-          fi
-      - name: Fix paths
-        run: |
-          find out -type f -name "*.html" -exec sed -i 's/"\/styles/"\.\/styles/g' {} +
-          find out -type f -name "*.html" -exec sed -i 's/"\/assets/"\.\/assets/g' {} +
-          find out -type f -name "*.html" -exec sed -i 's/"\/images/"\.\/images/g' {} +
+      - name: Static HTML export with Next.js
+        run: npx next export
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

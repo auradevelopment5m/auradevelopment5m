@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  output: "export",
   images: {
     unoptimized: true,
   },
-  assetPrefix: '/auradevelopment5m.github.io/',
-  basePath: '/auradevelopment5m.github.io',
+  // Remove assetPrefix and basePath
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
+

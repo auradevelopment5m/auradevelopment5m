@@ -2,6 +2,7 @@
   "name": "aura-network-portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://auradevelopment5m.github.io/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
