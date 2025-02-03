@@ -1,4 +1,4 @@
-import { AlertCircle, CheckCircle2, XCircle } from "lucide-react"
+import { AlertCircle, CheckCircle2, XCircle } from 'lucide-react'
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -226,4 +226,3 @@ export default function RulesPage() {
     </main>
   )
 }
-
