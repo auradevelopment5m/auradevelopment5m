@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Newspaper, AlertCircle } from "lucide-react"
+import { Newspaper, AlertCircle, Wrench } from "lucide-react"
 
 export default function Header() {
   const pathname = usePathname()
@@ -25,6 +25,12 @@ export default function Header() {
             <Link href="/rules" className="flex items-center">
               <AlertCircle className="mr-2 h-4 w-4" />
               Rules
+            </Link>
+          </Button>
+          <Button variant={pathname === "/services" ? "default" : "outline"} asChild>
+            <Link href="/services" className="flex items-center">
+              <Wrench className="mr-2 h-4 w-4" />
+              Services
             </Link>
           </Button>
         </nav>
