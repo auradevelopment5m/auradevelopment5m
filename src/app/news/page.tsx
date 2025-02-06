@@ -44,7 +44,7 @@ export default function NewsPage() {
           </ul>
           <h2 className="text-xl font-semibold mb-2">Supporting Our Development</h2>
           <p className="mb-4">
-            We've also introduced multiple ways for our community to support our ongoing development efforts:
+            We&apos;ve also introduced multiple ways for our community to support our ongoing development efforts:
           </p>
           <ul className="list-disc list-inside mb-4">
             <li>Direct PayPal donations</li>
