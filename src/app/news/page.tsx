@@ -15,6 +15,50 @@ export default function NewsPage() {
           </Link>
         </Button>
       </div>
+
+      {/* New Services Page Announcement */}
+      <Card className="bg-zinc-900 text-white mb-8">
+        <CardHeader>
+          <CardTitle>Aura Development Launches New Services Page</CardTitle>
+          <p className="text-sm text-gray-400">Posted on {new Date().toLocaleDateString()}</p>
+        </CardHeader>
+        <CardContent>
+          <p className="mb-4">
+            Aura Development is excited to announce the launch of our comprehensive services page, offering a range of
+            professional development and support options for the FiveM community.
+          </p>
+          <h2 className="text-xl font-semibold mb-2">Available Services</h2>
+          <ul className="list-disc list-inside mb-4">
+            <li className="mb-2">
+              <span className="font-semibold">Custom Discord Bots:</span> Tailored bot solutions ranging from $10 to
+              $150, featuring moderation tools, custom commands, and server management capabilities.
+            </li>
+            <li className="mb-2">
+              <span className="font-semibold">Custom Script Commissions:</span> Bespoke FiveM scripts priced between $45
+              and $150, including unique gameplay features and performance optimization.
+            </li>
+            <li className="mb-2">
+              <span className="font-semibold">Premium Support Subscription:</span> Enhanced support package with
+              priority assistance, extended hours, and direct access to our development team.
+            </li>
+          </ul>
+          <h2 className="text-xl font-semibold mb-2">Supporting Our Development</h2>
+          <p className="mb-4">
+            We've also introduced multiple ways for our community to support our ongoing development efforts:
+          </p>
+          <ul className="list-disc list-inside mb-4">
+            <li>Direct PayPal donations</li>
+            <li>Ko-fi support platform</li>
+          </ul>
+          <div className="mt-4">
+            <Button asChild>
+              <Link href="/services">View Services Page</Link>
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Previous VWarden Announcement */}
       <Card className="bg-zinc-900 text-white mb-8">
         <CardHeader>
           <CardTitle>Aura Development Introduces VWarden to Combat Leaking</CardTitle>
