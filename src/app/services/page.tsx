@@ -45,7 +45,7 @@ export default function ServicesPage() {
               <li>Integration with other resources</li>
               <li>Performance optimization</li>
             </ul>
-            <p className="mt-4">Prices range from $45 to $150, based on the script's size and functionality.</p>
+            <p className="mt-4">Prices range from $45 to $150, based on the script&apos;s size and functionality.</p>
           </CardContent>
         </Card>
       </div>
@@ -67,7 +67,8 @@ export default function ServicesPage() {
             <li>Regular check-ins and proactive issue resolution</li>
           </ul>
           <p className="mt-4">
-            <strong>Note:</strong> Support may be limited for escrowed resources or those we're not licensed to access.
+            <strong>Note:</strong> Support may be limited for escrowed resources or those we&apos;re not licensed to
+            access.
           </p>
         </CardContent>
         <CardFooter>
