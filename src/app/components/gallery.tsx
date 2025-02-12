@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { DiscIcon as Discord, Store, Youtube, Coffee } from "lucide-react"
+import { DiscIcon as Discord, Store, Youtube, Coffee, Download, ShoppingCart } from "lucide-react"
 
 const paidItems = [
   {
@@ -27,7 +27,17 @@ const freeItems = [
     url: "https://github.com/zlexif/aura-applications",
     preview: "https://www.youtube.com/embed/dnY1j-1eS_I",
     aspectRatio: "aspect-[16/9]",
-    className: "lg:col-span-2 lg:col-start-2",
+    className: "lg:col-span-2",
+  },
+  {
+    src: "https://i.imgur.com/X4veCOQ.png",
+    alt: "QB-CityHall Redesign - Modern UI, Enhanced Functionality, Customizable",
+    title: "QB-CityHall Redesign",
+    description: "Free Resource",
+    url: "https://github.com/auradevelopment5m/qb-cityhall-redesign",
+    preview: "https://streamable.com/e/7289db",
+    aspectRatio: "aspect-[16/9]",
+    className: "lg:col-span-2",
   },
 ]
 
@@ -42,7 +52,7 @@ const links = [
     icon: <Discord className="text-[#7289da]" />,
     text: "Aura City Roleplay Discord",
   },
-  { href: "https://ko-fi.com/auradevelopment", icon: <Coffee className="text-[#29abe0]" />, text: "Ko-fi" },
+  { href: "https://ko-fi.com/auradevelopment", icon: <Coffee className="text-[#7289da]" />, text: "Ko-fi" },
   { href: "https://auradevelopment.tebex.io", icon: <Store className="text-[#43bdfe]" />, text: "Tebex Store" },
   {
     href: "https://www.youtube.com/@aura_development",
@@ -54,16 +64,17 @@ const links = [
 export default function Gallery() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
-  const [activePreview, setActivePreview] = useState<string | null>(null)
+  const [activePreview, setActivePreview] = useState<{ preview: string; url: string; isPaid: boolean } | null>(null)
 
-  const renderItems = (items: typeof paidItems, index: number) => (
-    <div key={index} className="space-y-8">
+  const renderItems = (items: typeof paidItems, index: number, isPaid: boolean) => (
+    <div key={index} className="flex flex-nowrap overflow-x-auto space-x-8 pb-4">
       {items.map((item, itemIndex) => (
         <motion.div
           key={itemIndex}
-          className={`group relative overflow-hidden rounded-lg bg-zinc-900 ${item.className}`}
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          className={`group relative overflow-hidden rounded-lg bg-zinc-900 flex-shrink-0 ${item.className}`}
+          style={{ width: "400px" }}
+          initial={{ opacity: 0, x: 20 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
           transition={{ duration: 0.8, delay: itemIndex * 0.2 }}
         >
           <a href={item.url} target="_blank" rel="noopener noreferrer" className="block">
@@ -82,7 +93,7 @@ export default function Gallery() {
                 size="sm"
                 onClick={(e) => {
                   e.preventDefault()
-                  setActivePreview(item.preview)
+                  setActivePreview({ preview: item.preview, url: item.url, isPaid })
                 }}
                 className="bg-white/10 hover:bg-white/20 text-white"
               >
@@ -110,12 +121,12 @@ export default function Gallery() {
         <div className="space-y-16">
           <div>
             <h3 className="text-2xl font-semibold mb-8 text-white">Paid Resources</h3>
-            <div className="grid gap-8 grid-cols-1 lg:grid-cols-4">{renderItems(paidItems, 0)}</div>
+            {renderItems(paidItems, 0, true)}
           </div>
 
           <div>
             <h3 className="text-2xl font-semibold mb-8 text-white">Free Resources</h3>
-            <div className="grid gap-8 grid-cols-1 lg:grid-cols-4">{renderItems(freeItems, 1)}</div>
+            {renderItems(freeItems, 1, false)}
           </div>
         </div>
 
@@ -143,15 +154,35 @@ export default function Gallery() {
           <div className="relative bg-zinc-900 rounded-lg max-w-4xl w-full p-4">
             <div className="relative pb-[56.25%] h-0">
               <iframe
-                src={activePreview}
+                src={activePreview.preview}
                 className="absolute top-0 left-0 w-full h-full rounded-lg"
                 allow="autoplay; encrypted-media"
                 allowFullScreen
               />
             </div>
-            <Button onClick={() => setActivePreview(null)} className="mt-4 bg-white/10 hover:bg-white/20 text-white">
-              Close Preview
-            </Button>
+            <div className="mt-4 flex justify-between">
+              <Button onClick={() => setActivePreview(null)} className="bg-white/10 hover:bg-white/20 text-white">
+                Close Preview
+              </Button>
+              <Button
+                asChild
+                className={activePreview.isPaid ? "bg-green-600 hover:bg-green-700" : "bg-blue-600 hover:bg-blue-700"}
+              >
+                <a href={activePreview.url} target="_blank" rel="noopener noreferrer">
+                  {activePreview.isPaid ? (
+                    <>
+                      <ShoppingCart className="mr-2 h-4 w-4" />
+                      Buy Now
+                    </>
+                  ) : (
+                    <>
+                      <Download className="mr-2 h-4 w-4" />
+                      Download
+                    </>
+                  )}
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       )}

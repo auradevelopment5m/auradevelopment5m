@@ -16,6 +16,59 @@ export default function NewsPage() {
         </Button>
       </div>
 
+      {/* QB-CityHall UI Overhaul Announcement */}
+      <Card className="bg-zinc-900 text-white mb-8">
+        <CardHeader>
+          <CardTitle>QB-CityHall UI Overhaul Released</CardTitle>
+          <p className="text-sm text-gray-400">Posted on {new Date().toLocaleDateString()}</p>
+        </CardHeader>
+        <CardContent>
+          <h2 className="text-2xl font-semibold mb-4">🏙️ QB-CityHall UI Overhaul</h2>
+          <p className="mb-4">We&apos;re excited to announce a fresh update to the QB-CityHall interface!</p>
+          <h3 className="text-xl font-semibold mb-2">What&apos;s New:</h3>
+          <ul className="list-disc list-inside mb-4">
+            <li>Sleek, modern design that&apos;s easy on the eyes</li>
+            <li>Smoother transitions between pages</li>
+            <li>Responsive layout that works on various screen sizes</li>
+            <li>New color scheme with gradients for that extra pop</li>
+            <li>Intuitive navigation for Identity and Job sections</li>
+          </ul>
+          <h3 className="text-xl font-semibold mb-2">Key Improvements:</h3>
+          <ul className="list-disc list-inside mb-4">
+            <li>Compact design that doesn&apos;t hog your screen</li>
+            <li>Cleaner code structure for easier customization</li>
+            <li>Improved performance with optimized CSS and JS</li>
+          </ul>
+          <p className="mb-4">
+            This update is perfect for server owners looking to give their players a better City Hall experience.
+            Whether you&apos;re dishing out IDs or helping citizens find jobs, this UI&apos;s got you covered.
+          </p>
+          <p className="mb-4">
+            We encourage you to try it out and let us know what you think! Pull requests and issues are welcome on our
+            GitHub repository.
+          </p>
+          <div className="flex space-x-4 mb-4">
+            <Button asChild variant="outline">
+              <Link
+                href="https://github.com/auradevelopment5m/qb-cityhall-redesign"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub Repository
+              </Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="https://streamable.com/7289db" target="_blank" rel="noopener noreferrer">
+                Watch Preview
+              </Link>
+            </Button>
+          </div>
+          <p className="text-sm text-gray-400">
+            Your support means a lot to us. Consider starring the repository if you find it useful!
+          </p>
+        </CardContent>
+      </Card>
+
       {/* New Services Page Announcement */}
       <Card className="bg-zinc-900 text-white mb-8">
         <CardHeader>
